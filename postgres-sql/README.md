@@ -1,3 +1,4 @@
+```
 curl https://ftp.postgresql.org/pub/source/v9.6.9/postgresql-9.6.9.tar.gz | tar zx -C .
 
 yum -y groupinstall "Development Tools"
@@ -25,4 +26,5 @@ export PATH=$PGHOME/bin:.:$PATH
 ----
 
 source .bash_profile
+```
 
