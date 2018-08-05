@@ -21,10 +21,16 @@ vi .bash_profile
 export PGHOME=/opt/postgresql-9.6.9/pg_home
 export PGDATA=/opt/postgresql-9.6.9/pg_data
 export PGDATABASE=pg-user
-export PGPORT=2303
+export PGPORT=5432
 export PATH=$PGHOME/bin:.:$PATH
 ----
 
 source .bash_profile
+
+
+pg_ctl start -w -t 60
+psql -h localhost -p 5432 -U pg-user -d postgres /* データベースを指定して接続 */
+ps -ef | grep postgres
+
 ```
 
