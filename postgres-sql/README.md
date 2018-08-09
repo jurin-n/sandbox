@@ -38,3 +38,11 @@ ps -ef | grep postgres
 create table test_table(id int, name varchar);
 ```
 
+### firewallに穴開ける
+```
+firewall-cmd --add-port=5432/tcp --zone=public --permanent && firewall-cmd --reload
+```
+```
+参考
+https://qiita.com/kenjjiijjii/items/1057af2dddc34022b09e
+```
