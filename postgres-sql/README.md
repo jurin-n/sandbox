@@ -46,3 +46,28 @@ firewall-cmd --add-port=5432/tcp --zone=public --permanent && firewall-cmd --rel
 参考
 https://qiita.com/kenjjiijjii/items/1057af2dddc34022b09e
 ```
+
+
+### 浮動小数点数のデータ型試す
+```
+
+CREATE TABLE float_test (r1 REAL,r2 REAL, d1 DOUBLE PRECISION, d2 DOUBLE PRECISION ,n1 NUMERIC, n2 NUMERIC);
+
+insert into float_test(r1,r2,d1,d2,n1,n2) VALUES(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1),(0.1,0.1,0.1,0.1,0.1,0.1);
+
+select * from float_test where r1=r2;
+select * from float_test where d1=d2;
+select * from float_test where n1=n2;
+select * from float_test where r1=d1;
+select * from float_test where r1=n1;
+select * from float_test where d1=n1;
+
+select sum(r1),sum(d1),sum(n1) from float_test;
+select r1+r1+r1+r1+r1+r1+r1+r1+r1+r1 from float_test;
+select d1+d1+d1+d1+d1+d1+d1+d1+d1+d1 from float_test;
+select n1+n1+n1+n1+n1+n1+n1+n1+n1+n1 from float_test;
+```
+```
+参考
+https://oss-db.jp/measures/silver_sample_170904_01.shtml
+```
