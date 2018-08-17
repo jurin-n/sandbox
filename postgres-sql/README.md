@@ -100,29 +100,29 @@ ON t1.dept_id = t2.dept_id
 ```
 
 #### 左外部結合
-'''
+```
 SELECT t1.dept_id,t1.dept_name,t2.emp_id, t2.emp_name
 FROM dept t1 LEFT OUTER JOIN emp t2
 ON t1.dept_id = t2.dept_id
 ORDER BY t2.emp_name,t1.dept_name
-'''
+```
 
 #### 右外部結合
-'''
+```
 SELECT t1.dept_id,t1.dept_name,t2.emp_id, t2.emp_name
 FROM dept t1 RIGHT OUTER JOIN emp t2
 ON t1.dept_id = t2.dept_id
 ORDER BY t2.emp_name,t1.dept_name
-'''
+```
 
 ### 結合キーが同じ名前ならばUSING句も使える
-'''
+```
 SELECT t1.dept_id,t1.dept_name,t2.emp_id, t2.emp_name
 FROM dept t1 INNER JOIN emp t2 USING(dept_id)
 ORDER BY t2.emp_name,t1.dept_name
-'''
-'''
+```
+```
 参考
 https://wa3.i-3-i.info/word1263.html
 https://en.wikipedia.org/wiki/Join_(SQL)
-'''
+```
