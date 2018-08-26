@@ -2,6 +2,13 @@
 アプリケーションエンジニアのためのApache Spark入門
 https://www.shuwasystem.co.jp/products/7980html/5377.html
 
+### Vagrant関係
+```
+vagrant up
+vagrant status
+vagrant ssh
+vagrant halt
+```
 
 ### Apache Sparkインストール関係
 ```
