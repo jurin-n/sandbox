@@ -1,3 +1,8 @@
+### 参考文献
+アプリケーションエンジニアのためのApache Spark入門
+https://www.shuwasystem.co.jp/products/7980html/5377.html
+
+
 ### Apache Sparkインストール関係
 ```
 sudo yum install -y git git-core java-1.8.0-openjdk epel-release python-pip gcc python-devel libevent-devel
