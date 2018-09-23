@@ -35,3 +35,22 @@ count = lines.flatMap(lambda x: x.split(" ")).map(lambda x: (x, 1)).reduceByKey(
 for( word, count) in count:
      print "%s: %i" % (word, count)
 ```
+
+### Fluentd
+#### インストール
+```
+curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent3.sh | sh
+
+```
+
+#### 起動
+```
+sudo su - #rootで作業
+systemctl start td-agent
+```
+
+#### 起動確認
+```
+systemctl status td-agent
+```
+
