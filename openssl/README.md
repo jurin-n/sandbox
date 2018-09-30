@@ -21,7 +21,7 @@ openssl x509 -days 365 -req -signkey ca.key < ca.csr > ca.crt
 ```
 openssl genrsa 2048 > server.key
 openssl req -config openssl_test.cnf -new -key server.key -extensions v3_req \
-  -subj "/C=JP/ST=Tokyo-to/L=Shinjuku-ku/O=Jurin-n.com//OU=IT dept./CN=dev1.test.local" > server.csr
+  -subj "/C=JP/ST=Tokyo-to/L=Shinjuku-ku/O=Jurin-n.com/OU=IT dept./CN=dev1.test.local" > server.csr
 ```
 
 ### サーバ証明書(自己証明書)作成。ここで自作のCAで証明している。
