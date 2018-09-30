@@ -52,12 +52,25 @@ rm server.*
 rm -rf demoCA/
 ```
 
+## その他
+### 暗号スイートの確認
+```
+openssl ciphers -v | grep 'ECDHE-RSA-AES256-GCM-SHA384'
+```
+上記のコマンドを実行すると下記のような結果が表示。
+```
+ECDHE-RSA-AES256-GCM-SHA384 TLSv1.2 Kx=ECDH     Au=RSA  Enc=AESGCM(256) Mac=AEAD
+```
+
 # 参考資料
-opensslコマンドの使い方
+opensslコマンドの使い方<br/>
 https://qiita.com/hana_shin/items/6d9de0847a06d8ee95cc
 
-SubjectAltName対応 x.509 証明書を取得するためのCSRを作成する
+SubjectAltName対応 x.509 証明書を取得するためのCSRを作成する<br/>
 https://qiita.com/saitara/items/eda74ac6a950122b5f31
 
-独自SSLサーバ認証局(CA)作成とサーバ証明書発行
+独自SSLサーバ認証局(CA)作成とサーバ証明書発行<br/>
 https://qiita.com/makoto1899/items/ef15372d4cf4621a674e
+
+GMOグローバルサイン>サポートサイト>opensslコマンドで証明書情報を確認したい。<br/>
+https://jp.globalsign.com/support/faq/07.html
