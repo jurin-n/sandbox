@@ -84,6 +84,12 @@ openssl pkcs12 \
 ```
 
 ### OpenSSLで対応する暗号スイートの一覧を取得
+#### 全てを表示
 ```
 openssl ciphers -V 'ALL:COMPLEMENTOFALL'
+```
+
+#### 特定のキーワードに基づく暗号スイートに絞り込む　＊例えば、TLS version 1.2に絞り込む
+```
+openssl ciphers -V 'TLSv1.2'
 ```
