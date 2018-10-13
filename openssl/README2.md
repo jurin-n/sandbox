@@ -46,3 +46,22 @@ openssl x509 \
 ```
 openssl x509 -text -in jurin-n.com.local.crt -noout
 ```
+
+### 証明書をASCII形式(PEM)からバイナリ形式(DER)に変換
+```
+openssl x509 \
+    -inform PEM \
+    -in jurin-n.com.local.crt \
+    -outform DER \
+    -out jurin-n.com.local.der
+```
+
+### 証明書をバイナリ形式(DER)からASCII形式(PEM)に変換
+```
+curl -O http://cacerts.digicert.com/DigiCertSHA2HighAssuranceServerCA.crt
+openssl x509 \
+    -inform DER \
+    -in DigiCertSHA2HighAssuranceServerCA.crt \
+    -outform PEM \
+    -out DigiCertSHA2HighAssuranceServerCA.pem
+```
