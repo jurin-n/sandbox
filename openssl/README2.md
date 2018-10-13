@@ -32,3 +32,17 @@ openssl req -new \
 ```
 openssl req -text -in jurin-n.com.local.csr -noout
 ```
+
+### 自分自身の証明書に署名
+```
+openssl x509 \
+    -req -days 365 \
+    -in jurin-n.com.local.csr \
+    -signkey jurin-n.com.local.key \
+    -out jurin-n.com.local.crt
+```
+
+### 証明書を調べる
+```
+openssl x509 -text -in jurin-n.com.local.crt -noout
+```
