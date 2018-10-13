@@ -75,10 +75,15 @@ openssl pkcs12 -export \
     -in jurin-n.com.local.crt
 ```
 
-### 証明書をPKCX#12(PFX)形式からASCII形式(PEM)に変換
+### 証明書をPKCS#12(PFX)形式からASCII形式(PEM)に変換
 ```
 openssl pkcs12 \
     -in jurin-n.com.local.p12 \
     -out jurin-n.com.local.p12.pem \
     -nodes
+```
+
+### OpenSSLで対応する暗号スイートの一覧を取得
+```
+openssl ciphers -V 'ALL:COMPLEMENTOFALL'
 ```
