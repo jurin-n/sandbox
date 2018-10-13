@@ -65,3 +65,20 @@ openssl x509 \
     -outform PEM \
     -out DigiCertSHA2HighAssuranceServerCA.pem
 ```
+
+### 証明書をASCII形式(PEM)からPKCS#12(PFX)形式に変換
+```
+openssl pkcs12 -export \
+    -name "My Certificate" \
+    -out jurin-n.com.local.p12 \
+    -inkey jurin-n.com.local.key \
+    -in jurin-n.com.local.crt
+```
+
+### 証明書をPKCX#12(PFX)形式からASCII形式(PEM)に変換
+```
+openssl pkcs12 \
+    -in jurin-n.com.local.p12 \
+    -out jurin-n.com.local.p12.pem \
+    -nodes
+```
