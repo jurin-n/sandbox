@@ -95,6 +95,8 @@ openssl ciphers -V 'TLSv1.2'
 ```
 
 
+#### root CA作成
+##### ディレクトリ＆ファイル初期化
 ```
 mkdir -p root-ca/certs root-ca/db root-ca/private
 chmod 700 root-ca/private
@@ -103,17 +105,20 @@ openssl rand -hex 16 > root-ca/db/serial
 echo 1001 > root-ca/db/crlnumber
 ```
 
+##### root CA用の証明書作成
 ```
-cp root-ca.conf root-ca/oot-ca.conf 
+cp root-ca.conf root-ca/root-ca.conf
+cd root-ca
 # passwordは test 
-openssl genrsa -aes256 -out root-ca/private/root-ca.key 2048
+openssl genrsa -aes256 -out private/root-ca.key 2048
 openssl req -new \
     -config root-ca.conf \
     -out root-ca.csr \
-    -keyout root-ca/private/root-ca.key
+    -keyout private/root-ca.key
 openssl ca -selfsign \
     -config root-ca.conf \
     -in root-ca.csr \
     -out root-ca.crt \
-    -extensions ca_ext
+    -extensions ca_ext \
+    -keyfile private/root-ca.key
 ```
