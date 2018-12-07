@@ -25,14 +25,15 @@ docker run --name postgres-dev -e POSTGRES_PASSWORD=dev123 -p 5432:5432 -d postg
 ### Flyway実行
 #### 接続先データベースよりbaseline作成し、flyway_schema_historyテーブル作成。
 ```
-mvn flyway:baseline
+mvn -Dflyway.configFiles=src/main/resources/postgresql.conf flyway:baseline
 ```
+
 参考：https://flywaydb.org/documentation/maven/baseline
 
 
 #### src/main/resources/db/migration 配下に格納のDDL,DMLを反映
 ```
-mvn flyway:migrate
+mvn -Dflyway.configFiles=src/main/resources/postgresql.conf flyway:migrate
 ```
 参考：https://flywaydb.org/documentation/maven/migrate
 
